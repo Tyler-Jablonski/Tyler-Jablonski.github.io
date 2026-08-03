@@ -2,11 +2,176 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Media Design Site | Tyler Jablonski</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+            padding: 4rem 8%;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .project-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .overview-section {
+            background-color: #555555;
+            padding: 2rem 8%;
+            text-align: center;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            padding: 3rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-item {
+            background-color: var(--bg-card);
+            padding: 2.5rem;
+            aspect-ratio: 1;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .feature-item h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        .contributions-section {
+            padding: 4rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .contributions-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contribution-block {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+        }
+        .contribution-block h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .contribution-block p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 1rem 8%;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--text-main);
+        }
+        .external-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .external-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .external-link a:hover {
+            color: var(--text-main);
+        }
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-item {
+                aspect-ratio: auto;
+                min-height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
-<a href="https://nmd.louisrielatc.ca/">
-    <h1>NEW MEDIA SITE</h1>
-</a>
+    <header>
+        <div class="brand">
+            <h1>Tyler Jablonski</h1>
+            <p class="subtitle">Gameplay Programmer</p>
+        </div>
+        <nav>
+            <a href="index.html#about" class="nav-link">Home</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#skills" class="nav-link">Skills</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <a href="index.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-header">
+        <h1>New Media Design Site</h1>
+        <p>Louis Riel Arts & Technology Centre</p>
+    </div>
+
+    <div class="overview-section">
+        Overview
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-item">
+            <h3>Web Design</h3>
+        </div>
+        <div class="feature-item">
+            <h3>Responsive Layout</h3>
+        </div>
+        <div class="feature-item">
+            <h3>User Experience</h3>
+        </div>
+        <div class="feature-item">
+            <h3>Digital Integration</h3>
+        </div>
+    </div>
+
+    <section class="contributions-section">
+        <h2>My Contributions</h2>
+        
+        <div class="contribution-block">
+            <h3>Web Development & Design</h3>
+            <p>Contributed to the design and development of a modern, responsive website for the Louis Riel Arts & Technology Centre. Implemented clean, intuitive interface designs that effectively showcase the institution's programs and resources. Ensured cross-platform compatibility and accessibility standards.</p>
+        </div>
+
+        <div class="contribution-block">
+            <h3>Frontend Development</h3>
+            <p>Developed responsive frontend components using modern web technologies. Created interactive elements and smooth user experiences across all devices. Optimized performance and ensured fast load times while maintaining visual consistency throughout the site.</p>
+        </div>
+
+        <div class="contribution-block">
+            <h3>Technical Implementation</h3>
+            <p>Implemented technical solutions for content management and digital integration. Collaborated with stakeholders to understand requirements and translate them into functional web solutions. Maintained code quality and documented technical implementations for future maintenance.</p>
+        </div>
+
+        <div class="external-link">
+            <p>Visit the site: <a href="https://nmd.louisrielatc.ca/" target="_blank">Louis Riel Arts & Technology Centre</a></p>
+        </div>
+    </section>
+
+    <script src="Script.js"></script>
 </body>
 </html>

@@ -2,12 +2,177 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape From Bear Island | Tyler Jablonski</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+            padding: 4rem 8%;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .project-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .overview-section {
+            background-color: #555555;
+            padding: 2rem 8%;
+            text-align: center;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            padding: 3rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-item {
+            background-color: var(--bg-card);
+            padding: 2.5rem;
+            aspect-ratio: 1;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .feature-item h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+        .contributions-section {
+            padding: 4rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .contributions-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .contribution-block {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+        }
+        .contribution-block h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .contribution-block p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 1rem 8%;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            color: var(--text-main);
+        }
+        .external-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .external-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .external-link a:hover {
+            color: var(--text-main);
+        }
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .feature-item {
+                aspect-ratio: auto;
+                min-height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a href="https://deversogg.itch.io/escape-from-bear-island">
-    <h1> ESCAPE FROM BEAR ISLAND</h1>
-    </a>
+    <header>
+        <div class="brand">
+            <h1>Tyler Jablonski</h1>
+            <p class="subtitle">Gameplay Programmer</p>
+        </div>
+        <nav>
+            <a href="index.html#about" class="nav-link">Home</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#skills" class="nav-link">Skills</a>
+            <a href="index.html#resume" class="nav-link">Resume</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
 
+    <a href="index.html" class="back-link">← Back to Projects</a>
+
+    <div class="project-header">
+        <h1>Escape From Bear Island</h1>
+        <p>Vancouver Film School</p>
+    </div>
+
+    <div class="overview-section">
+        Overview
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-item">
+           <img src="BearImage1.png" alt="2 bears in water image" height="400" width="400">
+        </div>
+        <div class="feature-item">
+            <h3>Dynamic AI</h3>
+        </div>
+        <div class="feature-item">
+            <h3>Exploration Systems</h3>
+        </div>
+        <div class="feature-item">
+            <h3>Resource Management</h3>
+        </div>
+    </div>
+
+    <section class="contributions-section">
+        <h2>My Contributions</h2>
+        
+        <div class="contribution-block">
+            <h3>Gameplay & Mechanics Design</h3>
+            <p>Implemented core survival and evasion mechanics that create tension and engagement throughout the game. Developed resource gathering, crafting systems, and survival elements that drive player decision-making. Balanced difficulty curves to maintain challenge while keeping the experience rewarding.</p>
+        </div>
+
+        <div class="contribution-block">
+            <h3>AI & NPC Systems</h3>
+            <p>Created intelligent enemy behavior patterns that adapt to player strategy and environmental conditions. Implemented state machines for enemy AI to ensure realistic and challenging encounters. Fine-tuned difficulty balancing across different threat levels and scenarios.</p>
+        </div>
+
+        <div class="contribution-block">
+            <h3>World Systems & Polish</h3>
+            <p>Developed interactive world systems including environmental hazards, dynamic events, and progression mechanics. Collaborated with design and art teams to ensure cohesive gameplay experience. Implemented feedback systems and polish passes to create immersive and engaging gameplay.</p>
+        </div>
+
+        <div class="external-link">
+            <p>Play on itch.io: <a href="https://deversogg.itch.io/escape-from-bear-island" target="_blank">Escape From Bear Island</a></p>
+        </div>
+    </section>
+
+    <script src="Script.js"></script>
 </body>
 </html>
