@@ -5,6 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tyler Jablonski | Gameplay Programmer</title>
 
+	<!-- Google Fonts for unified UI headers (Matches Mobius Page) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
 	<!-- External CSS -->
 	<link rel="stylesheet" href="styles.css">
 </head>
@@ -13,75 +18,74 @@
 <!-- Sticky Navigation Header -->
 <header>
 	<div class="brand">
-		<h1>Tyler Jablonski</h1>
-		<p class="subtitle">Gameplay Programmer</p>
+		<a href="#about" class="brand-link">
+			<h1>Tyler Jablonski</h1>
+			<p class="subtitle">Gameplay Programmer</p>
+		</a>
 	</div>
 	<nav>
 		<a href="#about" class="nav-link">Home</a>
 		<a href="#projects" class="nav-link">Projects</a>
 		<a href="#skills" class="nav-link">Skills</a>
-		<a href="#resume" class="nav-link">Resume</a>
+		<a href="TylerJablonskiResume.pdf" target="_blank" class="nav-link">Resume</a>
 		<a href="#contact" class="nav-link">Contact</a>
 	</nav>
 </header>
 
 <main>
 	<!-- About Section -->
-	<section id="about">
+	<section id="about" class="hero-section">
 		<div class="card container-narrow">
 			<h2>About Me</h2>
-			<p>Gameplay & Tools Engineer specializing in C++, Unreal Engine, and multidisciplinary collaboration. Experienced in designing modular Gameplay systems, prototyping mechanics, and shipping titles. Seeking AAA Gameplay Engineer roles.</p>
+			<p class="hero-description">Gameplay & Tools Engineer specializing in <code>C++</code>, <code>Unreal Engine 5</code>, and multidisciplinary collaboration. Experienced in designing modular Gameplay systems, prototyping mechanics, and shipping titles. Seeking AAA Gameplay Engineer roles.</p>
 		</div>
 	</section>
 
 	<!-- Projects Section -->
-	<section id="projects">
-		<h2>Projects</h2>
-		<div class="project-grid">
+	<section id="projects" class="contributions-section">
+		<h2>Featured Projects</h2>
+
+		<div class="contributions-list">
 
 			<!-- Project 1: Mobius Fish -->
-			<article class="project-card">
-				<a href="MobiusFishPage.html" class="card-link">
-					<div class="media-container">
-						<img src="True_Mobius_Gif.gif" alt="Gif of Mobius Fish" width="900" height="500">
+			<article class="contribution-row">
+				<div class="contribution-media">
+					<a href="MobiusFishPage.html">
+						<img src="True_Mobius_Gif.gif" width="900" height="500" alt="MobiusFishPage">
+						<iframe width="900" height="500" src="https://www.youtube.com/embed/m0_aHW5kC9Y" frameborder="0" allowfullscreen></iframe>
+						Your browser does not support the video tag.
+					</a>
+				</div>
+				<div class="contribution-text">
+					<h3>Mobius Fish</h3>
+					<div class="pill-badge">Unreal Engine 5 • C++ • Gameplay Ability System</div>
+					<p class="institution-tag">Vancouver Film School • Arcade Boat Action Game</p>
+					<p>A fast-paced arcade action game featuring dynamic aquatic threats, automated tower targeting systems, procedural level flows, and C++ driven GAS abilities.</p>
+					<div class="project-actions">
+						<a href="MobiusFishPage.html" class="btn-primary">View Project Details →</a>
 					</div>
-					<div class="project-details">
-						<h3>Mobius Fish</h3>
-						<p class="institution">Vancouver Film School</p>
-					</div>
-				</a>
+				</div>
 			</article>
 
 			<!-- Project 2: Escape From Bear Island -->
-			<article class="project-card">
-				<a href="EscapeFromBearIslandPage.html" class="card-link">
-					<div class="media-container">
-						<video class="project-video" loop width="890" height="490" controls>
-							<source src="GameplaySnippet.mp4" type="video/mp4" >
+			<article class="contribution-row reverse">
+				<div class="contribution-media">
+					<a href="EscapeFromBearIslandPage.html">
+						<video class="project-video" autoplay loop muted playsinline poster="BearIslandPoster.png">
+							<source src="GameplaySnippet.mp4" type="video/mp4">
 							Your browser does not support the video tag.
 						</video>
+					</a>
+				</div>
+				<div class="contribution-text">
+					<h3>Escape From Bear Island</h3>
+					<div class="pill-badge">Unity 6 • C# • Finite State Machine AI</div>
+					<p class="institution-tag">Vancouver Film School • 3D Survival Action</p>
+					<p>Features state-driven enemy bear AI, custom inventory/pickup mechanics, a persistent checkpoint saving system, and in-engine developer tools.</p>
+					<div class="project-actions">
+						<a href="EscapeFromBearIslandPage.html" class="btn-primary">View Project Details →</a>
 					</div>
-					<div class="project-details">
-						<h3>Escape From Bear Island</h3>
-						<p class="institution">Vancouver Film School</p>
-					</div>
-				</a>
-			</article>
-
-			<!-- Project 3: New Media Design Site -->
-			<article class="project-card">
-				<a href="NewMediaSitePage.html" class="card-link">
-					<div class="media-container">
-						<!--<video class="project-video" muted loop playsinline poster="new-media-poster.jpg">
-							<source src="NewMedia_Preview.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video> -->
-					</div>
-					<div class="project-details">
-						<h3>New Media Design Site</h3>
-						<p class="institution">Louis Riel Arts & Technology Centre</p>
-					</div>
-				</a>
+				</div>
 			</article>
 
 		</div>
@@ -89,41 +93,58 @@
 
 	<!-- Skills Section -->
 	<section id="skills">
-		<h2>Skills</h2>
+		<h2>Technical Skills</h2>
 		<div class="card skills-grid">
 			<div class="skill-group">
 				<h3>Engines & Frameworks</h3>
-				<p>Unreal Engine 5, Unity 6, GAS framework</p>
+				<p>Unreal Engine 5, Unity 6, Gameplay Ability System (GAS), Niagara VFX</p>
 			</div>
 			<div class="skill-group">
 				<h3>Languages</h3>
 				<p>C++, C#, Python, JavaScript, TypeScript, HTML/CSS</p>
 			</div>
 			<div class="skill-group">
-				<h3>Tools & Systems</h3>
-				<p>Git / Fork, Firebase, Visual Studio, JetBrains Rider</p>
+				<h3>Tools & Infrastructure</h3>
+				<p>Git / Fork, Perforce (P4), Firebase, Visual Studio, JetBrains Rider</p>
 			</div>
 			<div class="skill-group">
-				<h3>Production & Workflow</h3>
-				<p>Agile/Scrum, Technical documentation, Task Management</p>
+				<h3>Production & Architecture</h3>
+				<p>Agile/Scrum, Data-Driven Architecture, Custom Debug Tools, Tech Docs</p>
 			</div>
 		</div>
 	</section>
 
 	<!-- Contact Section -->
 	<section id="contact">
-		<h2>Contact Me</h2>
-		<p class="contact-subtext">Feel free to send me a message or contact me in any way you wish</p>
-		<div class="social-links">
-			<a href="https://github.com" target="_blank" class="social-box">GitHub</a>
-			<a href="https://www.linkedin.com/in/tyler-jablonski/" target="_blank" class="social-box">LinkedIn</a>
-			<a href="mailto:your.email@example.com" class="social-box">Email</a>
-			<a href="TylerJablonskiResume.pdf" target="_blank" id="resume" class="social-box">Resume PDF</a>
+		<h2>Get In Touch</h2>
+		<p class="contact-subtext">Feel free to send me a message regarding opportunities, technical collaborations, or just to chat about game programming.</p>
+
+		<form id="contact-form" class="contact-form">
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required placeholder="Your Name">
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required placeholder="your.email@example.com">
+			</div>
+
+			<div class="form-group">
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+			</div>
+
+			<button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
+			<p id="form-status" class="form-status"></p>
+		</form>
+
+		<div class="social-links-footer">
+			<a href="https://www.linkedin.com/in/tyler-jablonski/" target="_blank" class="social-link">LinkedIn ↗</a>
 		</div>
 	</section>
 </main>
 
-<!-- External JavaScript -->
 <script src="Script.js"></script>
 </body>
 </html>

@@ -2,12 +2,183 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape From Bear Island | Tyler Jablonski</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="BearIslandStyles.css">
 </head>
-<body>
-    <a href="https://deversogg.itch.io/escape-from-bear-island">
-    <h1> ESCAPE FROM BEAR ISLAND</h1>
-    </a>
+<body class="bear-island-page">
+<header>
+    <div class="brand">
+        <a href="index.html" class="brand-link">
+            <h1>Tyler Jablonski</h1>
+            <p class="subtitle">Gameplay Programmer</p>
+        </a>
+    </div>
+    <nav>
+        <a href="index.html#about" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="TylerJablonskiResume.pdf" target="_blank" class="nav-link">Resume</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+</header>
 
+<main class="container">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+    <header class="project-header">
+        <h1>Escape From Bear Island</h1>
+        <p class="project-tagline">Vancouver Film School • Gameplay Engineering</p>
+    </header>
+
+
+    <!-- Main Gameplay Video Container -->
+    <section class="hero-media">
+        <video controls autoplay loop muted playsinline poster="BearImage1.png" class="featured-video">
+
+            <source src="GameplaySnippet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <h2>Overview</h2>
+        <p>Escape from Bear Island is a 3D 3rd person Chibi style action-adventure game with a grumpy middle-aged
+            lumberjack in the woods who is trying to escape from the island and return home to his wife, but finds his
+            path blocked by sloths of bears. So in order to return safely to his house, he has to kill all the bears
+            using his reliable axe. </p>
+    </section>
+    <!-- section class="features-grid">
+            <div class="feature-item">
+                <h3>Finite State Machine Enemy AI</h3>
+                <ul>
+                    <li>State-Driven Behavior: Engineered enemy AI systems using Finite State Machines (FSM) to handle
+                        dynamic behavioral transitions (Patrol, Chase, Attack).
+                    </li>
+                    <li>Perception & Combat: Scripted perception logic to switch enemies from environmental roaming to
+                        aggressive pursuit and melee attacks based on proximity and line-of-sight checks.
+                    </li>
+                </ul>
+            </div>
+            <div class="feature-item">
+                <h3>Exploration Systems</h3>
+                <p>Traverse wilderness environments with dynamic hazard navigation.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Resource Management</h3>
+                <p>Crafting and inventory management to sustain survival runs.</p>
+            </div>
+        </section>
+        - -->
+
+    <!-- Contributions with GIFs/Videos -->
+    <section class="contributions-section">
+        <h2>My Contributions</h2>
+
+        <div class="contributions-list">
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <video controls autoplay loop muted playsinline poster="BearImage1.png" class="featured-video">
+
+                        <source src="GameplaySnippet.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="contribution-text">
+                    <h3>Finite State Machine Enemy AI</h3>
+                    <ul>
+                        <li>State-Driven Behavior: Engineered enemy AI systems using Finite State Machines (FSM) to
+                            handle dynamic behavioral transitions (Patrol, Chase, Attack).
+                        </li>
+                        <li>Perception & Combat: Scripted perception logic to switch enemies from environmental roaming
+                            to aggressive pursuit and melee attacks based on proximity and line-of-sight checks.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contribution-row reverse">
+                <div class="contribution-media">
+                    <video controls autoplay loop muted playsinline poster="BearImage1.png" class="featured-video">
+
+                        <source src="GameplaySnippet.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+
+                </div>
+                <div class="contribution-text">
+                    <h3>Pickups & Inventory Mechanics</h3>
+                    <ul>
+                        <li>Core Pickup Architecture: Designed and implemented three gameplay pickups (Honey Drops,
+                            Healing Flowers, Bear Traps) to enrich the core loop.
+                        </li>
+                        <Ul>
+                            <li>Honey Drops: Drops from defeated enemies to restore player stamina.</li>
+                            <li>Healing Flowers: Provides instant health restoration.</li>
+                            <li>Bear Traps: Integrates with an inventory system allowing secondary action placement
+                                (Right Click) to deal massive damage and apply a 3-second stun to incoming enemies.
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <video controls autoplay loop muted playsinline poster="BearImage1.png" class="featured-video">
+
+                        <source src="GameplaySnippet.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                </div>
+                <div class="contribution-text">
+                    <h3>In-Engine Debug & Tooling</h3>
+                    <ul>
+                        <li>Developer Suite: Built custom in-game debug tools—including checkpoint teleportation,
+                            toggleable god mode, infinite stamina, and live stat modifiers—to accelerate playtesting and
+                            balance iteration.
+                        </li>
+                        <li>Workflow Optimization: Streamlined QA and feature testing across late-game scenarios,
+                            eliminating test friction and reducing iteration cycles for the team.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <video controls autoplay loop muted playsinline poster="BearImage1.png" class="featured-video">
+
+                        <source src="GameplaySnippet.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+
+                </div>
+                <div class="contribution-text">
+                    <h3>Local Saving & Checkpoint System</h3>
+                    <ul>
+
+                        <li> Persistent Progression: Built a local save/load system using Unity PlayerPrefs to retain
+                            player progress across game sessions.
+                        </li>
+                        <li> Visual Checkpoints: Implemented interactive bonfire checkpoints that trigger flame visual
+                            effects upon activation, offering clear player feedback and serving as dynamic respawn
+                            anchors upon player death.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="external-link-container">
+            <a href="https://deversogg.itch.io/escape-from-bear-island" target="_blank" class="itch-button">
+                Play on itch.io ↗
+            </a>
+        </div>
+    </section>
+</main>
 </body>
 </html>
