@@ -5,174 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape From Bear Island | Tyler Jablonski</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .project-header {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
-            padding: 4rem 8%;
-            text-align: center;
-            border-bottom: 1px solid var(--card-border);
-        }
-        .project-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
-        .project-header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-        .overview-section {
-            background-color: #555555;
-            padding: 2rem 8%;
-            text-align: center;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            padding: 3rem 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .feature-item {
-            background-color: var(--bg-card);
-            padding: 2.5rem;
-            aspect-ratio: 1;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .feature-item h3 {
-            font-size: 1rem;
-            color: var(--text-main);
-        }
-        .contributions-section {
-            padding: 4rem 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .contributions-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .contribution-block {
-            background-color: var(--bg-card);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
-        }
-        .contribution-block h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        .contribution-block p {
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-        .back-link {
-            display: inline-block;
-            padding: 1rem 8%;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .back-link:hover {
-            color: var(--text-main);
-        }
-        .external-link {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .external-link a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .external-link a:hover {
-            color: var(--text-main);
-        }
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            .feature-item {
-                aspect-ratio: auto;
-                min-height: 150px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="BearIslandStyles.css">
 </head>
-<body>
-    <header>
-        <div class="brand">
-            <h1>Tyler Jablonski</h1>
-            <p class="subtitle">Gameplay Programmer</p>
-        </div>
-        <nav>
-            <a href="index.html#about" class="nav-link">Home</a>
-            <a href="index.html#projects" class="nav-link">Projects</a>
-            <a href="index.html#skills" class="nav-link">Skills</a>
-            <a href="index.html#resume" class="nav-link">Resume</a>
-            <a href="index.html#contact" class="nav-link">Contact</a>
-        </nav>
+<body class="bear-island-page">
+<header>
+    <div class="brand">
+        <h1>Tyler Jablonski</h1>
+        <p class="subtitle">Gameplay Programmer</p>
+    </div>
+    <nav>
+        <a href="index.html#about" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#resume" class="nav-link">Resume</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+</header>
+
+<main class="container">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+    <header class="project-header">
+        <h1>Escape From Bear Island</h1>
+        <p class="project-tagline">Vancouver Film School • Gameplay Engineering</p>
     </header>
 
-    <a href="index.html" class="back-link">← Back to Projects</a>
 
-    <div class="project-header">
-        <h1>Escape From Bear Island</h1>
-        <p>Vancouver Film School</p>
-    </div>
+    <!-- Main Gameplay Video Container -->
+    <section class="hero-media">
+        <video controls autoplay loop muted playsinline poster="BearImage1.png" class="featured-video">
+            <source src="GameplaySnippet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
-    <div class="overview-section">
-        Overview
-    </div>
-
-    <div class="features-grid">
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <h2>Overview</h2>
+        <p>Escape from Bear Island is a 3D 3rd person Chibi style action-adventure game with a grumpy middle-aged
+            lumberjack in the woods who is trying to escape from the island and return home to his wife, but finds his
+            path blocked by sloths of bears. So in order to return safely to his house, he has to kill all the bears
+            using his reliable axe. </p>
+    </section>
+<!-- section class="features-grid">
         <div class="feature-item">
-           <img src="BearImage1.png" alt="2 bears in water image" height="400" width="400">
-        </div>
-        <div class="feature-item">
-            <h3>Dynamic AI</h3>
+            <h3>Finite State Machine Enemy AI</h3>
+            <ul>
+                <li>State-Driven Behavior: Engineered enemy AI systems using Finite State Machines (FSM) to handle
+                    dynamic behavioral transitions (Patrol, Chase, Attack).
+                </li>
+                <li>Perception & Combat: Scripted perception logic to switch enemies from environmental roaming to
+                    aggressive pursuit and melee attacks based on proximity and line-of-sight checks.
+                </li>
+            </ul>
         </div>
         <div class="feature-item">
             <h3>Exploration Systems</h3>
+            <p>Traverse wilderness environments with dynamic hazard navigation.</p>
         </div>
         <div class="feature-item">
             <h3>Resource Management</h3>
-        </div>
-    </div>
-
-    <section class="contributions-section">
-        <h2>My Contributions</h2>
-        
-        <div class="contribution-block">
-            <h3>Gameplay & Mechanics Design</h3>
-            <p>Implemented core survival and evasion mechanics that create tension and engagement throughout the game. Developed resource gathering, crafting systems, and survival elements that drive player decision-making. Balanced difficulty curves to maintain challenge while keeping the experience rewarding.</p>
-        </div>
-
-        <div class="contribution-block">
-            <h3>AI & NPC Systems</h3>
-            <p>Created intelligent enemy behavior patterns that adapt to player strategy and environmental conditions. Implemented state machines for enemy AI to ensure realistic and challenging encounters. Fine-tuned difficulty balancing across different threat levels and scenarios.</p>
-        </div>
-
-        <div class="contribution-block">
-            <h3>World Systems & Polish</h3>
-            <p>Developed interactive world systems including environmental hazards, dynamic events, and progression mechanics. Collaborated with design and art teams to ensure cohesive gameplay experience. Implemented feedback systems and polish passes to create immersive and engaging gameplay.</p>
-        </div>
-
-        <div class="external-link">
-            <p>Play on itch.io: <a href="https://deversogg.itch.io/escape-from-bear-island" target="_blank">Escape From Bear Island</a></p>
+            <p>Crafting and inventory management to sustain survival runs.</p>
         </div>
     </section>
+    - -->
 
-    <script src="Script.js"></script>
+    <!-- Contributions with GIFs/Videos -->
+    <section class="contributions-section">
+        <h2>My Contributions</h2>
+
+        <div class="contributions-list">
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <img src="BearImage1.png" alt="Gameplay Mechanics">
+                </div>
+                <div class="contribution-text">
+                    <h3>Finite State Machine Enemy AI</h3>
+                    <ul>
+                        <li>State-Driven Behavior: Engineered enemy AI systems using Finite State Machines (FSM) to
+                            handle dynamic behavioral transitions (Patrol, Chase, Attack).
+                        </li>
+                        <li>Perception & Combat: Scripted perception logic to switch enemies from environmental roaming
+                            to aggressive pursuit and melee attacks based on proximity and line-of-sight checks.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contribution-row reverse">
+                <div class="contribution-media">
+                    <img src="BearImage2.png" alt="AI & NPC Systems">
+                </div>
+                <div class="contribution-text">
+                    <h3>Pickups & Inventory Mechanics</h3>
+                    <ul>
+                        <li>Core Pickup Architecture: Designed and implemented three gameplay pickups (Honey Drops,
+                            Healing Flowers, Bear Traps) to enrich the core loop.
+                        </li>
+                        <Ul>
+                            <li>Honey Drops: Drops from defeated enemies to restore player stamina.</li>
+                            <li>Healing Flowers: Provides instant health restoration.</li>
+                            <li>Bear Traps: Integrates with an inventory system allowing secondary action placement
+                                (Right Click) to deal massive damage and apply a 3-second stun to incoming enemies.
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <img src="BearImage3.png" alt="In-Engine Debug & Tooling">
+                </div>
+                <div class="contribution-text">
+                    <h3>In-Engine Debug & Tooling</h3>
+                    <ul>
+                        <li>Developer Suite: Built custom in-game debug tools—including checkpoint teleportation,
+                            toggleable god mode, infinite stamina, and live stat modifiers—to accelerate playtesting and
+                            balance iteration.
+                        </li>
+                        <li>Workflow Optimization: Streamlined QA and feature testing across late-game scenarios,
+                            eliminating test friction and reducing iteration cycles for the team.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <img src="BearImage2.png" alt="In-Engine Debug & Tooling">
+                </div>
+                <div class="contribution-text">
+                    <h3>Local Saving & Checkpoint System</h3>
+                    <ul>
+
+                        <li> Persistent Progression: Built a local save/load system using Unity PlayerPrefs to retain
+                            player progress across game sessions.
+                        </li>
+                        <li> Visual Checkpoints: Implemented interactive bonfire checkpoints that trigger flame visual
+                            effects upon activation, offering clear player feedback and serving as dynamic respawn
+                            anchors upon player death.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="external-link-container">
+            <a href="https://deversogg.itch.io/escape-from-bear-island" target="_blank" class="itch-button">
+                Play on itch.io ↗
+            </a>
+        </div>
+    </section>
+</main>
 </body>
 </html>

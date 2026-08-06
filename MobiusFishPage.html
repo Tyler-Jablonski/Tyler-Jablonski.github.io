@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobius Fish | Tyler Jablonski</title>
+    <!-- Google Fonts for styled UI headers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="MobiusStyles.css">
 </head>
 <body class="mobius-theme">
+
 <header>
     <div class="brand">
         <h1>Tyler Jablonski</h1>
@@ -17,119 +23,127 @@
         <a href="index.html#about" class="nav-link">Home</a>
         <a href="index.html#projects" class="nav-link">Projects</a>
         <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#resume" class="nav-link">Resume</a>
         <a href="index.html#contact" class="nav-link">Contact</a>
     </nav>
 </header>
 
-<a href="index.html" class="back-link">← Back to Projects</a>
+<main class="container">
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
 
-<div class="project-header">
-    <h1>Mobius Fish</h1>
-    <p>Vancouver Film School</p>
-</div>
+    <header class="project-header">
+        <h1>Mobius Fish</h1>
+        <p class="project-tagline">Vancouver Film School • Gameplay Engineering</p>
+    </header>
 
-<div class="overview-section">
-    Overview
-</div>
+    <!-- Main Hero Video Container -->
+    <section class="hero-media">
+        <video controls autoplay loop muted playsinline poster="Videos/Poster.png" class="featured-video">
+            <source src="Videos/FunnelMissiles.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
 
-<div class="features-grid">
-    <div class="feature-item video-item">
-        <video controls loop muted src="Videos/FunnelMissiles.mp4"></video>
-    </div>
-    <div class="feature-item">
-        <h3>Weapon System</h3>
-    </div>
-    <div class="feature-item">
-        <h3>Upgrade System</h3>
-    </div>
-    <div class="feature-item">
-        <h3>Procedural System</h3>
-    </div>
-    <div class="feature-item">
-        <h3>VFX & Shaders</h3>
-    </div>
-</div>
+    <!-- Overview Section -->
+    <section class="overview-section">
+        <h2>Overview</h2>
+        <p>A fast-paced arcade boat action game where players fight off dynamic aquatic threats using automated tower systems, procedural level flows, and C++ driven ability upgrades.</p>
+    </section>
 
-<section class="contributions-section">
-    <h2>My Contributions</h2>
-
-    <!-- Block 1: Weapon & Targeting System -->
-    <div class="contribution-block">
-        <h3>Weapon & Targeting System</h3>
-        <h4>Architectural Focus: Categorized Weapon Classes & Automated Targeting Logic</h4>
-        <div class="block-content">
-            <div class="block-media">
-                <video autoplay loop muted playsinline src="Videos/FunnelMissiles.mp4"></video>
-            </div>
-            <div class="block-text">
-                <ul>
-                    <li><strong>Archetype-Based Arsenal:</strong> Designed 3 distinct cannon categories (Controllable, Close-Range, Long-Range) totaling 9 unique weapons, each balance-tuned via Data Table parameters.</li>
-                    <li><strong>Automated Target Prioritization:</strong>
-                        <ul>
-                            <li><strong>Close-Range:</strong> Scans for and prioritizes nearby low-health threats.</li>
-                            <li><strong>Long-Range:</strong> Filters for stronger targets farther away, balancing heavy damage output with lower rate-of-fire cooldowns.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Custom Aiming & Tracking:</strong> Built dynamic tracking math driven by exposed attributes (Turn Speed, Range, Cooldown, Damage) for crisp visual feedback and accurate lead-firing.</li>
-                </ul>
-            </div>
+    <!-- Quick Pillars Grid -->
+    <section class="features-grid">
+        <div class="feature-item">
+            <h3>Weapon Systems</h3>
+            <p>Categorized cannon archetypes with automated targeting logic and lead-firing math.</p>
         </div>
-    </div>
-
-    <!-- Block 2: Dynamic Upgrade System -->
-    <div class="contribution-block">
-        <h3>Dynamic Upgrade System</h3>
-        <h4>Architectural Focus: C++ & Gameplay Ability System (GAS) Integration</h4>
-        <div class="block-content">
-            <div class="block-media">
-                <video autoplay loop muted playsinline src="Videos/Sawblade.mp4"></video>
-            </div>
-            <div class="block-text">
-                <ul>
-                    <li><strong>GAS-Backed Modifications:</strong> Integrated Unreal Engine’s Gameplay Ability System (GAS) to drive ship and cannon upgrades via dynamic <code>GameplayEffects</code>.</li>
-                    <li><strong>C++ Stat Binding:</strong> Extended base GAS attributes in C++ to expose boat and weapon stats (damage, fire rates, ranges), enabling clean additive, multiplicative, or balanced upgrade logic.</li>
-                    <li><strong>Data Asset Visual Mapping:</strong> Paired gameplay modifier logic with Data Assets to bundle runtime attributes alongside UI metadata (icons, display names, descriptions) for easy asset management.</li>
-                </ul>
-            </div>
+        <div class="feature-item">
+            <h3>GAS Upgrades</h3>
+            <p>Gameplay Ability System integration driving stat modifications and UI pairings.</p>
         </div>
-    </div>
-
-    <!-- Block 3: Data Architecture & Balancing Tools -->
-    <div class="contribution-block">
-        <h3>Data Architecture & Balancing Tools</h3>
-        <h4>Architectural Focus: Centralized Data Tables & Composite Data Tables</h4>
-        <div class="block-content">
-            <div class="block-media">
-                <video autoplay loop muted playsinline src="Videos/Zapper.mp4"></video>
-            </div>
-            <div class="block-text">
-                <ul>
-                    <li><strong>Composite Stat Management:</strong> Structured multi-tier enemy stats using Composite Data Tables, consolidating individual enemy scaling tiers into a single unified matrix for fast cross-comparison.</li>
-                    <li><strong>Rapid Prototyping Workflow:</strong> Externalized all critical gameplay variables—including cannon attributes, level segments, and upgrade paths—into Data Tables to eliminate hardcoded Blueprint values.</li>
-                    <li><strong>Designer Velocity:</strong> Enabled zero-recompile balance adjustments, allowing designers to tweak weapon feel and enemy difficulty curves directly inside table editors.</li>
-                </ul>
-            </div>
+        <div class="feature-item">
+            <h3>Procedural Flow</h3>
+            <p>Data-driven level generation with anti-repetition logic and difficulty scaling.</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Block 4: Procedural Level Generation -->
-    <div class="contribution-block">
-        <h3>Procedural Level Generation</h3>
-        <h4>Architectural Focus: Data-Driven Modular Generation</h4>
-        <div class="block-content">
-            <div class="block-media">
-                <video autoplay loop muted playsinline src="Videos/Sniper.mp4"></video>
+    <!-- Contributions Section -->
+    <section class="contributions-section">
+        <h2>My Contributions</h2>
+
+        <div class="contributions-list">
+
+            <!-- Block 1: Weapon & Targeting System -->
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <video autoplay loop muted playsinline src="Videos/FunnelMissiles.mp4"></video>
+                </div>
+                <div class="contribution-text">
+                    <h3>Weapon & Targeting System</h3>
+                    <div class="pill-badge">Architectural Focus: Categorized Weapon Classes & Automated Targeting</div>
+                    <ul>
+                        <li><strong>Archetype-Based Arsenal:</strong> Designed 3 distinct cannon categories (Controllable, Close-Range, Long-Range) totaling 9 unique weapons, each balance-tuned via Data Table parameters.</li>
+                        <li><strong>Automated Target Prioritization:</strong>
+                            <ul>
+                                <li><strong>Close-Range:</strong> Scans for and prioritizes nearby low-health threats.</li>
+                                <li><strong>Long-Range:</strong> Filters for stronger targets farther away, balancing heavy damage output with lower rate-of-fire cooldowns.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Custom Aiming & Tracking:</strong> Built dynamic tracking math driven by exposed attributes (Turn Speed, Range, Cooldown, Damage) for crisp visual feedback and accurate lead-firing.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="block-text">
-                <ul>
-                    <li><strong>Weighted Segment Selection:</strong> Built a procedural level layout system using pre-constructed level segments mapped to difficulty thresholds in Data Tables.</li>
-                    <li><strong>Smart Flow & Anti-Repetition:</strong> Implemented logic to track recent segment selection, ensuring no back-to-back duplicate segments appear while dynamically scaling difficulty based on player progression.</li>
-                    <li><strong>Designer-Friendly Iteration:</strong> Separated level data into modular Data Tables, allowing designers to add, remove, or reorder level segments instantly without touching code or core level Blueprints.</li>
-                </ul>
+
+            <!-- Block 2: Dynamic Upgrade System -->
+            <div class="contribution-row reverse">
+                <div class="contribution-media">
+                    <video autoplay loop muted playsinline src="Videos/Sawblade.mp4"></video>
+                </div>
+                <div class="contribution-text">
+                    <h3>Dynamic Upgrade System</h3>
+                    <div class="pill-badge">Architectural Focus: C++ & Gameplay Ability System (GAS) Integration</div>
+                    <ul>
+                        <li><strong>GAS-Backed Modifications:</strong> Integrated Unreal Engine’s Gameplay Ability System (GAS) to drive ship and cannon upgrades via dynamic <code>GameplayEffects</code>.</li>
+                        <li><strong>C++ Stat Binding:</strong> Extended base GAS attributes in C++ to expose boat and weapon stats (damage, fire rates, ranges), enabling clean additive, multiplicative, or balanced upgrade logic.</li>
+                        <li><strong>Data Asset Visual Mapping:</strong> Paired gameplay modifier logic with Data Assets to bundle runtime attributes alongside UI metadata (icons, display names, descriptions) for easy asset management.</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- Block 3: Data Architecture & Balancing Tools -->
+            <div class="contribution-row">
+                <div class="contribution-media">
+                    <video autoplay loop muted playsinline src="Videos/Zapper.mp4"></video>
+                </div>
+                <div class="contribution-text">
+                    <h3>Data Architecture & Balancing Tools</h3>
+                    <div class="pill-badge">Architectural Focus: Centralized Data Tables & Composite Data Tables</div>
+                    <ul>
+                        <li><strong>Composite Stat Management:</strong> Structured multi-tier enemy stats using Composite Data Tables, consolidating individual enemy scaling tiers into a single unified matrix for fast cross-comparison.</li>
+                        <li><strong>Rapid Prototyping Workflow:</strong> Externalized all critical gameplay variables—including cannon attributes, level segments, and upgrade paths—into Data Tables to eliminate hardcoded Blueprint values.</li>
+                        <li><strong>Designer Velocity:</strong> Enabled zero-recompile balance adjustments, allowing designers to tweak weapon feel and enemy difficulty curves directly inside table editors.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Block 4: Procedural Level Generation -->
+            <div class="contribution-row reverse">
+                <div class="contribution-media">
+                    <video autoplay loop muted playsinline src="Videos/Sniper.mp4"></video>
+                </div>
+                <div class="contribution-text">
+                    <h3>Procedural Level Generation</h3>
+                    <div class="pill-badge">Architectural Focus: Data-Driven Modular Generation</div>
+                    <ul>
+                        <li><strong>Weighted Segment Selection:</strong> Built a procedural level layout system using pre-constructed level segments mapped to difficulty thresholds in Data Tables.</li>
+                        <li><strong>Smart Flow & Anti-Repetition:</strong> Implemented logic to track recent segment selection, ensuring no back-to-back duplicate segments appear while dynamically scaling difficulty based on player progression.</li>
+                        <li><strong>Designer-Friendly Iteration:</strong> Separated level data into modular Data Tables, allowing designers to add, remove, or reorder level segments instantly without touching code or core level Blueprints.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <script src="Script.js"></script>
 </body>

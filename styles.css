@@ -210,3 +210,33 @@ code {
         margin: 0 0.5rem;
     }
 }
+
+/* Project page common styles (moved from individual pages) */
+.project-header {
+    background: linear-gradient(135deg, var(--bg-header) 0%, rgba(0,0,0,0.6) 100%);
+    padding: 4rem 8%;
+    text-align: center;
+    border-bottom: 1px solid var(--card-border);
+}
+.project-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--text-main); }
+.project-header p { color: var(--text-muted); font-size: 1.1rem; }
+.overview-section { background-color: rgba(255,255,255,0.02); padding: 2rem 8%; text-align: center; color: var(--text-main); font-weight: 600; font-size: 1rem; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 3rem 8%; max-width: 1200px; margin: 0 auto; }
+.feature-item { background-color: var(--bg-card); padding: 2.5rem; aspect-ratio: 1; border: 1px solid var(--card-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; }
+.feature-item h3 { font-size: 1rem; color: var(--text-main); }
+.contributions-section { padding: 4rem 8%; max-width: 1200px; margin: 0 auto; }
+.contribution-block { background-color: var(--bg-card); padding: 2rem; margin-bottom: 2rem; border: 1px solid var(--card-border); border-radius: 8px; }
+.contribution-block h3 { color: var(--accent); margin-bottom: 1rem; }
+.contribution-block p { color: var(--text-muted); line-height: 1.8; }
+.back-link { display: inline-block; padding: 1rem 8%; color: var(--accent); text-decoration: none; font-weight: 500; }
+.back-link:hover { color: var(--text-main); }
+.external-link { text-align: center; margin-top: 2rem; }
+.external-link a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.external-link a:hover { color: var(--text-main); }
+/* Contribution block 2-column layout */
+.block-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; align-items: center; }
+.block-media { border: 2px solid var(--card-border); border-radius: 6px; overflow: hidden; background-color: #000; }
+.block-media video, .block-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.block-text { color: var(--text-muted); }
+@media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .feature-item { aspect-ratio: auto; min-height: 150px; } .block-content { grid-template-columns: 1fr; } }
+

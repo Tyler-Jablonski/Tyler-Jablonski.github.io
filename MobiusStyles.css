@@ -1,183 +1,331 @@
-﻿
-/* ==========================================
-   MOBIUS FISH - SMOOTH NAUTICAL/WOODEN THEME
-   ========================================== */
+﻿/* ==========================================================================
+   MOBIUS FISH - STYLIZED WOOD & DEEP OCEAN THEME
+   ========================================================================== */
 
+/* Font imports inspired by menu UI */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+:root {
+    /* Color Palette sampled from in-game UI & deep ocean */
+    --bg-main: #11233b;          /* Deep ocean backdrop */
+    --bg-header: #0d1b2e;        /* Darker ocean header */
+
+    /* Wood texture palette */
+    --wood-card: #3a281e;        /* Deep carved wood card */
+    --wood-card-hover: #483327;  /* Hover state wood highlight */
+    --wood-border: #6d4b38;      /* Warm wood plank border */
+
+    /* Parchment & Accent palette */
+    --accent-gold: #e5b369;      /* In-game menu golden title accent */
+    --accent-gold-hover: #f3c783;/* Brighter gold for link hovers */
+    --text-parchment: #e2d1b9;   /* Weathered menu text */
+    --text-muted: #bda892;       /* Soft subtext parchment */
+
+    --font-heading: 'Kalam', cursive, 'Segoe UI', sans-serif;
+}
+
+/* Global Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+/* Base Body Styles */
 body.mobius-theme {
-    /* Muted nautical palette sampled from in-game wooden cards */
-    --bg-main: #234270; /* Soft dark deep ocean backdrop */
-    --bg-header: #2867a5; /* Slightly lighter deep ocean header */
-    --bg-card: #3a2b22; /* Warm dark wood card base */
-    --card-border: #634b3c; /* Carved wood border outline */
-
-    --accent: #d9ab6a; /* Smooth warm golden-amber highlight */
-    --accent-light: #e8c992; /* Light parchment gold for secondary highlights */
-
-    --text-main: #f0e6d2; /* Light cream/beige text */
-    --text-muted: #cab7a5; /* Soft weathered parchment text */
-
-    background-color: var(--bg-main);
-    color: var(--text-main);
+    background-color: var(--bg-main) !important;
+    color: var(--text-parchment);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 /* Header & Navigation */
-.mobius-theme header {
+body.mobius-theme header {
     background-color: var(--bg-header);
-    border-bottom: 1px solid rgba(99, 75, 60, 0.4);
-}
-
-.mobius-theme nav a:hover,
-.mobius-theme nav a.active {
-    color: var(--accent);
-}
-
-.mobius-theme .brand h1 {
-    text-decoration-color: var(--accent);
-}
-
-/* Back Link */
-.mobius-theme .back-link {
-    color: var(--accent);
-    padding: 1rem 8%;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.mobius-theme .back-link:hover {
-    color: var(--text-main);
-}
-
-/* Project Header Title */
-.mobius-theme .project-header h1 {
-    color: var(--text-main);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-/* Overview Bar */
-.mobius-theme .overview-section {
-    background-color: #1a1512;
-    border-top: 2px solid var(--card-border);
-    border-bottom: 2px solid var(--card-border);
-    color: var(--accent-light);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-/* Feature Items & Contribution Cards */
-.mobius-theme .feature-item,
-.mobius-theme .contribution-block {
-    background: linear-gradient(180deg, #382a21 0%, #291e17 100%);
-    border: 3px solid var(--card-border);
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    margin-bottom: 2rem;
-    padding: 2rem;
-}
-
-.mobius-theme .contribution-block:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-
-/* Section Headers & Badges */
-.mobius-theme .contributions-section h2 {
-    color: var(--text-main);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.mobius-theme .contribution-block h3 {
-    color: var(--accent-light);
-    font-size: 1.3rem;
-    margin-bottom: 0.25rem;
-}
-
-/* Subtitle Pill Badge */
-.mobius-theme .contribution-block h4 {
-    display: inline-block;
-    font-size: 0.82rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    background-color: rgba(217, 171, 106, 0.08);
-    border: 1px solid rgba(217, 171, 106, 0.25);
-    padding: 0.35rem 0.75rem;
-    border-radius: 4px;
-    margin-bottom: 1.25rem;
-}
-
-/* Contribution Block 2-Column Internal Layout */
-.mobius-theme .block-content {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr; /* Video left, Text right */
-    gap: 1.5rem;
+    border-bottom: 2px solid var(--wood-border);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.mobius-theme .block-media {
-    border: 2px solid var(--card-border);
+body.mobius-theme .brand h1 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--text-parchment);
+    font-family: var(--font-heading);
+}
+
+body.mobius-theme .subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+}
+
+body.mobius-theme nav .nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+body.mobius-theme nav .nav-link:hover {
+    color: var(--accent-gold-hover);
+}
+
+/* Main Container Layout */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-gold-hover);
+    transform: translateX(-4px);
+}
+
+/* Project Header & Section Headers (Centered) */
+.project-header,
+.overview-section,
+.contributions-section h2 {
+    text-align: center;
+}
+
+.project-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin: 0;
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+}
+
+.project-tagline {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Section Headings */
+.overview-section h2,
+.contributions-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+.overview-section p {
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--text-parchment);
+    font-size: 1.05rem;
+}
+
+/* Main Hero Video */
+.hero-media {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 3px solid var(--wood-border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    background-color: #000;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+}
+
+.featured-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: auto !important;
+}
+
+/* Feature Cards Grid (Centered text) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.feature-item {
+    background-color: var(--wood-card);
+    border: 3px solid var(--wood-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+    background-color: var(--wood-card-hover);
+    border-color: var(--accent-gold);
+}
+
+.feature-item h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Contribution Cards / Rows */
+.contributions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contribution-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background-color: var(--wood-card);
+    border: 3px solid var(--wood-border);
+    border-radius: 8px;
+    padding: 1.75rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    transition: border-color 0.2s ease;
+}
+
+.contribution-row.reverse {
+    grid-template-columns: 1fr 1.1fr;
+}
+
+.contribution-row.reverse .contribution-media {
+    order: 2;
+}
+
+.contribution-row.reverse .contribution-text {
+    order: 1;
+}
+
+.contribution-row:hover {
+    border-color: var(--accent-gold);
+}
+
+.contribution-media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 6px;
     overflow: hidden;
+    border: 2px solid var(--wood-border);
     background-color: #000;
 }
 
-.mobius-theme .block-media video,
-.mobius-theme .block-media img {
+.contribution-media video,
+.contribution-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* Bullet Lists & Highlighting */
-.mobius-theme .contribution-block ul {
+/* Contribution Text & Lists */
+.contribution-text {
+    text-align: left; /* Keep long technical bullet lists readable */
+}
+
+.contribution-text h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+/* Subtitle / Pill Badge */
+.pill-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-gold);
+    background-color: rgba(229, 179, 105, 0.1);
+    border: 1px solid rgba(229, 179, 105, 0.3);
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.contribution-text ul {
     list-style-type: disc;
     padding-left: 1.25rem;
     margin: 0;
 }
 
-.mobius-theme .contribution-block li {
+.contribution-text li {
     color: var(--text-muted);
-    line-height: 1.6;
+    font-size: 0.95rem;
     margin-bottom: 0.5rem;
+    line-height: 1.5;
 }
 
-.mobius-theme .contribution-block li strong {
-    color: var(--text-main);
+.contribution-text li strong {
+    color: var(--text-parchment);
 }
 
-/* Nested List Formatting */
-.mobius-theme .contribution-block ul ul {
+.contribution-text ul ul {
     list-style-type: circle;
     padding-left: 1.25rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
 }
 
-.mobius-theme .contribution-block ul ul li {
-    margin-bottom: 0.25rem;
-    font-size: 0.95rem;
-}
-
-.mobius-theme .contribution-block ul ul li:last-child {
-    margin-bottom: 0;
-}
-
-/* Styled Inline Code Tags */
-.mobius-theme code {
-    background: rgba(0, 0, 0, 0.3);
-    color: var(--accent-light);
-    border: 1px solid rgba(217, 171, 106, 0.2);
-    padding: 0.1rem 0.3rem;
+/* Code Highlighting */
+body.mobius-theme code {
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--accent-gold);
+    border: 1px solid rgba(229, 179, 105, 0.25);
+    padding: 0.1rem 0.35rem;
     border-radius: 3px;
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 900px) {
-    .mobius-theme .block-content {
+@media (max-width: 850px) {
+    .contribution-row,
+    .contribution-row.reverse {
         grid-template-columns: 1fr;
+    }
+
+    .contribution-row.reverse .contribution-media {
+        order: 1;
+    }
+
+    .contribution-row.reverse .contribution-text {
+        order: 2;
     }
 }
