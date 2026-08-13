@@ -363,3 +363,120 @@ code {
         flex: 1 1 100%;
     }
 }
+/* Education Timeline */
+.education-section {
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* the vertical line down the middle */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: var(--accent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 2.5rem 3rem 2.5rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* dot marker on the center line */
+.timeline-dot {
+    position: absolute;
+    top: 0.4rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    border: 3px solid var(--bg-main);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-item.left .timeline-dot {
+    right: -9px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -9px;
+}
+
+.timeline-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.timeline-item.left .timeline-content:hover,
+.timeline-item.right .timeline-content:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+}
+
+.timeline-date {
+    color: #ff6666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.timeline-content p:not(.timeline-date) {
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* Mobile: collapse to a single column, line on the left */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding: 0 0 2.5rem 3rem;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+}
